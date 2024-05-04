@@ -21,4 +21,5 @@ public class Main {
         }
         scanner.close();
     }
+    //mamadou avait mal aux dents
 }
