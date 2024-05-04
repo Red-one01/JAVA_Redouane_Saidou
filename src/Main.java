@@ -3,18 +3,22 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int nombre = 0;
-        boolean entierValide = false;
+        int choix;
 
-        while (!entierValide) {
-            System.out.print("Veuillez saisir un entier : ");
-            if (scanner.hasNextInt())  {
-                nombre = scanner.nextInt();
-                entierValide = true;
+        while (true) {
+            System.out.print("Veuillez saisir un entier entre 1 et 4 : ");
+            if (scanner.hasNextInt()) {
+                choix = scanner.nextInt();
+                if (choix >= 1 && choix <= 4) {
+                    System.out.println("Vous avez saisi : " + choix);
+                    break;
+                } else {
+                }
             } else {
-                System.out.println("Ce n'est pas un entier valide. Veuillez réessayer.");
-                scanner.next(); // Pour vider la ligne incorrecte dans le scanner
+                System.out.println("Veuillez saisir un entier valide.");
+                scanner.next();
             }
         }
+        scanner.close();
     }
 }
