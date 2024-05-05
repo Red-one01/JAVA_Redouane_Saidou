@@ -1,5 +1,4 @@
 import Representation.Node;
-
 import Representation.ChanceNode;
 import Representation.DecisionNode;
 import Representation.TerminalNode;
