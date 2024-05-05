@@ -1,8 +1,8 @@
 package Representation;
 
 public abstract class Node {
-        private String description;
-        int id;
+        private final String description;
+        private final int id;
         private static int key = 1;
 
         public void display(){
@@ -11,11 +11,16 @@ public abstract class Node {
 
         public abstract Node choseNext();
 
-        public Node(){
+        public Node(String descript){
             id = key;
             ++key;
+            description = descript;
+
         }
 
+        public int getId() {
+            return id;
+        }
 }
 
 
