@@ -1,14 +1,14 @@
 package Representation;
 
-public class TerminalNode extends Node{
+public class TerminalNode extends Node {
 
 
     @Override
-    public Node choseNext(){
+    public Node choseNext() {
         return this;
     }
 
-    public TerminalNode(String descriptif){
+    public TerminalNode(String descriptif) {
         super(descriptif);
     }
 }
