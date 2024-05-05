@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public abstract class DecisionNode extends InnerNode{
+public  class DecisionNode extends InnerNode{
 
 
     public DecisionNode(String descript, ArrayList<Node> tab) {

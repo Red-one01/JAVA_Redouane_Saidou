@@ -1,25 +1,24 @@
+import Representation.Node;
+import Representation.InnerNode;
+import Representation.ChanceNode;
+import Representation.DecisionNode;
+import Representation.TerminalNode;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int choix;
-
-        while (true) {
-            System.out.print("Veuillez saisir un entier entre 1 et 4 : ");
-            if (scanner.hasNextInt()) {
-                choix = scanner.nextInt();
-                if (choix >= 1 && choix <= 4) {
-                    System.out.println("Vous avez saisi : " + choix);
-                    break;
-                } else {
-                }
-            } else {
-                System.out.println("Veuillez saisir un entier valide.");
-                scanner.next();
+        Node node1 = new ChanceNode("Bienvenue dans le jeu", new ArrayList<>(4)) {
+            public Node choseNext() {
+                return null;
             }
-        }
-        scanner.close();
+        };
+        Node node2 = new DecisionNode("Redouane avait mal aux dents", new ArrayList<>(4) ) {
+            public Node choseNext() {
+                return null;
+            }
+        };
+        Node node3 = new TerminalNode("Vzyy t'as gagné bouffon");
     }
-    //mamadou avait mal aux dents
 }

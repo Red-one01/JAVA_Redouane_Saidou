@@ -3,7 +3,7 @@ package Representation;
 import java.util.ArrayList;
 import java.util.Random;
 
-public abstract class ChanceNode extends InnerNode{
+public  class ChanceNode extends InnerNode{
 
 
     public ChanceNode(String descript, ArrayList<Node> tab) {
