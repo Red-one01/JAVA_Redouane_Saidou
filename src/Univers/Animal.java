@@ -1,5 +1,14 @@
 package Univers;
 
 public abstract class Animal {
-    private String Nom;
+    protected String Nom;
+
+    protected int damage;
+    protected int pv;
+
+
+    public Animal(String Nom){
+        this.Nom = Nom;
+
+    }
 }
