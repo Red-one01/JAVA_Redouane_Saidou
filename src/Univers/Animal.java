@@ -1,14 +1,14 @@
 package Univers;
 
-import java.awt.Color;
 import java.util.Scanner;
 
 public abstract class Animal {
+    protected final double BONUS_DEGAT_TYPE = 1.2 , REDUCTION_DEGAT_TYPE = 0.95;
     protected String Nom;
 
     protected int damage;
     protected int pv_max;
-    protected int pv;
+    protected double pv;
 
 
     protected Element_naturel type;
@@ -23,7 +23,7 @@ public abstract class Animal {
     }
 
     //renvoie true si encore en vie apres attaque sinon false
-    public abstract boolean attaquer(Element_naturel type_attaque);
+    public abstract boolean attaquer(Element_naturel type_attaque, int degats);
 
     @Override
     public String toString() {
@@ -33,7 +33,7 @@ public abstract class Animal {
     public Animal combattre(Animal opposant){
 
         while(true){
-            if (!opposant.attaquer(this.type)){
+            if (!opposant.attaquer(this.type,this.damage )){
                 while (true) {
                     Scanner scanner = new Scanner(System.in);
                     String reponse;
@@ -57,7 +57,7 @@ public abstract class Animal {
                 }
 
             }
-            if (!this.attaquer(opposant.type)){
+            if (!this.attaquer(opposant.type,opposant.damage )){
                 System.out.println("Vous avez perdu le combat");
                 this.revive();
                 return this;
@@ -65,7 +65,7 @@ public abstract class Animal {
         }
     }
 
-    public int getPv() {
+    public double getPv() {
         return pv;
     }
 }
