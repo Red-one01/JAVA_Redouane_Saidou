@@ -1,3 +1,5 @@
+import Univers.Animal;
+import Univers.Genre;
 import java.util.Scanner;
 
 public class IHM_console implements IHM{
@@ -24,5 +26,32 @@ public class IHM_console implements IHM{
             }
         }
 
+    }
+
+    @Override
+    public Genre genre_creation() {
+        Scanner scanner = new Scanner(System.in);
+        Genre genre;
+
+        while (true){
+            System.out.println("Veuillez saisir le genre de votre personnage");
+            String choix = scanner.next();
+
+            if (choix.equalsIgnoreCase("homme")) {
+                genre = Genre.HOMME;
+                return genre;
+            } else if (choix.equalsIgnoreCase("femme")) {
+                genre = Genre.FEMME;
+                return genre;
+            } else {
+                System.out.println("Genre invalide. Veuillez choisir entre 'Homme' ou 'Femme'!");
+                scanner.next(); // Consomme l'entrée invalide pour éviter une boucle infinie
+            }
+        }
+    }
+
+    @Override
+    public Animal premier_compagnon() {
+        ;
     }
 }
