@@ -14,4 +14,7 @@ public class Personnage {
 
     }
 
+    public Animal getCompagnon() {
+        return compagnon;
+    }
 }
