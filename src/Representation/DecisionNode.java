@@ -6,8 +6,8 @@ import java.util.Scanner;
 public  class DecisionNode extends InnerNode{
 
 
-    public DecisionNode(String descript, ArrayList<Node> tab) {
-        super(descript, tab);
+    public DecisionNode(String descript) {
+        super(descript);
     }
 
     @Override
