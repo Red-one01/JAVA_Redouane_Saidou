@@ -6,7 +6,6 @@ public class Combat implements Action{
 
     @Override
     public void lancer(Personnage joueur) {
-        joueur.getCompagnon().combattre(combatant);
-
+        joueur.changer_de_compagnon(joueur.getCompagnon().combattre(combatant));
     }
 }
