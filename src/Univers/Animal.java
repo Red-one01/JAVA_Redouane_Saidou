@@ -1,5 +1,6 @@
 package Univers;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public abstract class Animal {
@@ -13,6 +14,8 @@ public abstract class Animal {
 
     protected Element_naturel type;
 
+
+
     public void revive(){
         pv = pv_max;
     }
@@ -20,6 +23,22 @@ public abstract class Animal {
     public Animal(String Nom, int pv_max){
         this.Nom = Nom;
         this.pv_max = pv_max;
+    }
+
+    static Animal creerAnimalAleatoire() {//factory aléatoire
+        Random random = new Random();
+        int choix = random.nextInt(4);
+
+        switch (choix) {
+            case 0:
+                return Dragon.creerDragonAleatoire();
+            case 1:
+                return Grenouille_Geante.creerGrenouilleGeanteAleatoire();
+            case 2:
+                return Lion.creerLionAleatoire();
+            default:
+                return Aigle.creerAigleAleatoire();
+        }
     }
 
     //renvoie true si encore en vie apres attaque sinon false
