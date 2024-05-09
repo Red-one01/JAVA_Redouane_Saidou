@@ -7,4 +7,11 @@ public class Personnage {
 
     private Animal compagnon;
 
+    public Personnage(int taille, Genre genre, Animal premier_compagnon) {
+        this.taille = taille;
+        this.genre = genre;
+        compagnon = premier_compagnon;
+
+    }
+
 }
