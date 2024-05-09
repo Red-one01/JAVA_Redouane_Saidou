@@ -14,6 +14,10 @@ public class Personnage {
 
     }
 
+    public void changer_de_compagnon(Animal compagnon) {
+        this.compagnon = compagnon;
+    }
+
     public Animal getCompagnon() {
         return compagnon;
     }
