@@ -6,8 +6,8 @@ import java.util.Random;
 public  class ChanceNode extends InnerNode{
 
 
-    public ChanceNode(String descript, ArrayList<Node> tab) {
-        super(descript, tab);
+    public ChanceNode(String descript) {
+        super(descript);
     }
 
     @Override

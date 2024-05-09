@@ -52,6 +52,7 @@ public class IHM_console implements IHM{
 
     @Override
     public Animal premier_compagnon() {
-        ;
+        Animal compagnon = Animal.creerAnimalAleatoire();
+        return compagnon;
     }
 }

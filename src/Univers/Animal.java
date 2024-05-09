@@ -25,7 +25,7 @@ public abstract class Animal {
         this.pv_max = pv_max;
     }
 
-    static Animal creerAnimalAleatoire() {//factory aléatoire
+    public static Animal creerAnimalAleatoire() {//factory aléatoire
         Random random = new Random();
         int choix = random.nextInt(4);
 
