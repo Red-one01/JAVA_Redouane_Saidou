@@ -42,7 +42,7 @@ public  class DecisionNode extends InnerNode{
         //on traite le choix
 
 
-        scanner.close();
+        //scanner.close();
         return super.prochains_tab.get(choix-1);
     }
 

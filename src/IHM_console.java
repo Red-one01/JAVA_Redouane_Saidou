@@ -15,7 +15,7 @@ public class IHM_console implements IHM{
             if (scanner.hasNextInt()) { // Vérifie si l'entrée est un entier
                 taille = scanner.nextInt();
                 if (taille > 0 && taille < 220) { // Vérifie si la taille est positive
-                    scanner.close();
+                    //scanner.close();
                     return taille;
                 } else {
                     System.out.println("La taille doit être supérieure à zéro et inférieure à 220.");
@@ -26,6 +26,8 @@ public class IHM_console implements IHM{
             }
         }
 
+
+
     }
 
     @Override
@@ -33,21 +35,27 @@ public class IHM_console implements IHM{
         Scanner scanner = new Scanner(System.in);
         Genre genre;
 
-        while (true){
+        while (true) {
             System.out.println("Veuillez saisir le genre de votre personnage");
-            String choix = scanner.next();
+            if (scanner.hasNextLine()) {
+                String choix = scanner.next();
 
-            if (choix.equalsIgnoreCase("homme")) {
-                genre = Genre.HOMME;
-                return genre;
-            } else if (choix.equalsIgnoreCase("femme")) {
-                genre = Genre.FEMME;
-                return genre;
+                if (choix.equalsIgnoreCase("homme")) {
+                    genre = Genre.HOMME;
+                    break; // Sort de la boucle une fois que le genre est valide
+                } else if (choix.equalsIgnoreCase("femme")) {
+                    genre = Genre.FEMME;
+                    break; // Sort de la boucle une fois que le genre est valide
+                } else {
+                    System.out.println("Genre invalide. Veuillez choisir entre 'Homme' ou 'Femme'!");
+                }
             } else {
-                System.out.println("Genre invalide. Veuillez choisir entre 'Homme' ou 'Femme'!");
-                scanner.next(); // Consomme l'entrée invalide pour éviter une boucle infinie
+                System.out.println("Aucune entrée détectée. Veuillez saisir une valeur.");
+                scanner.nextLine(); // Pour consommer la nouvelle ligne
             }
         }
+        //scanner.close(); // Ferme le scanner lorsque vous avez terminé de l'utiliser
+        return genre;
     }
 
     @Override
