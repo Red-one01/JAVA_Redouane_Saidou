@@ -1,5 +1,8 @@
 package Representation;
 
+import Univers.Action;
+import Univers.Combat;
+
 import java.util.ArrayList;
 
 public class TerminalNode extends Node {
@@ -15,7 +18,7 @@ public class TerminalNode extends Node {
         return false;
     }
 
-    public TerminalNode(String descriptif) {
-        super(descriptif);
+    public TerminalNode(String descriptif, Action action) {
+        super(descriptif, action);
     }
 }

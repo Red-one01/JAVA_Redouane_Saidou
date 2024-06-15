@@ -1,4 +1,6 @@
 package Representation;
+import Univers.Action;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -6,8 +8,8 @@ import java.util.Scanner;
 public  class DecisionNode extends InnerNode{
 
 
-    public DecisionNode(String descript) {
-        super(descript);
+    public DecisionNode(String descript, Action action) {
+        super(descript, action);
     }
 
     @Override

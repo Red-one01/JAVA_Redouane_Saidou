@@ -46,7 +46,7 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return this.Nom+"(dégats: "+this.damage+" PV:"+this.pv+" type: "+this.type+")";
+        return this.Nom+"(dégats: "+this.damage+" PV: "+this.pv+" type: "+this.type+")";
     }
 
     public Animal combattre(Animal opposant){
@@ -56,7 +56,7 @@ public abstract class Animal {
                 while (true) {
                     Scanner scanner = new Scanner(System.in);
                     String reponse;
-                    System.out.println("Vous avez gagner voulez-vous echanger votre compagnon actuel avec"
+                    System.out.println("Vous avez gagner voulez-vous echanger votre compagnon actuel avec "
                             +opposant +"? (oui/non)");
 
                     reponse = scanner.nextLine().trim().toLowerCase();

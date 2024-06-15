@@ -1,15 +1,25 @@
 package Representation;
 
+import Univers.Action;
+import Univers.Personnage;
+
 import java.util.ArrayList;
 
 public abstract class InnerNode extends Node {
+
+
     public final static int NB_NODES = 4;
     protected ArrayList<Node> prochains_tab = new ArrayList<>();
 
-    public InnerNode(String descript) {
-        super(descript);
+
+
+    public InnerNode(String descript, Action action ) {
+        super(descript, action);
     }
 
+
+
+    @Override
     public boolean ajouter_noeud(ArrayList<Node> list_nodes) {
         prochains_tab = list_nodes;
         if (list_nodes.size() != NB_NODES) {

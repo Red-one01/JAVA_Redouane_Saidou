@@ -14,7 +14,7 @@ public class IHM_console implements IHM{
             System.out.print("Veuillez entrer la taille de votre personnage en cm: ");
             if (scanner.hasNextInt()) { // Vérifie si l'entrée est un entier
                 taille = scanner.nextInt();
-                if (taille > 0 && taille < 220) { // Vérifie si la taille est positive
+                if (taille > 100 && taille < 220) { // Vérifie si la taille est positive
                     //scanner.close();
                     return taille;
                 } else {
@@ -60,7 +60,6 @@ public class IHM_console implements IHM{
 
     @Override
     public Animal premier_compagnon() {
-        Animal compagnon = Animal.creerAnimalAleatoire();
-        return compagnon;
+        return Animal.creerAnimalAleatoire();
     }
 }
