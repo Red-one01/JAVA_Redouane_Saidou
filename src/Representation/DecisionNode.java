@@ -26,7 +26,9 @@ public class DecisionNode extends InnerNode {
 
         }
 
-        //on récup le choix fait
+        //on récup le choix fait gggg
+
+
         while (true) {
             System.out.print("Veuillez saisir un entier entre 1 et " + NB_NODES + " : ");
             if (scanner.hasNextInt()) {
@@ -34,9 +36,13 @@ public class DecisionNode extends InnerNode {
                 if (choix >= 1 && choix <= super.NB_NODES) {
                     System.out.println("Vous avez saisi : " + choix);
                     break;
+                } else {
+                    System.out.println("Veuillez saisir un entier entre 1 et " + NB_NODES + ".");
+                    scanner.next();
                 }
-            }
-            else {
+
+
+            } else {
                 System.out.println("Veuillez saisir un entier valide.");
                 scanner.next();
             }
