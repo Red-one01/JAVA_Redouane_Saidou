@@ -2,7 +2,7 @@ package Representation;
 
 import Univers.Action;
 
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 
@@ -16,6 +16,7 @@ public class DecisionNode extends InnerNode {
     @Override
     public Node choseNext() {
         Scanner scanner = new Scanner(System.in);
+
         int choix;
 
         //on propose les choix
@@ -31,7 +32,7 @@ public class DecisionNode extends InnerNode {
 
         while (true) {
             System.out.print("Veuillez saisir un entier entre 1 et " + NB_NODES + " : ");
-            if (scanner.hasNextInt()) {
+            if (scanner.hasNextLine()) {
                 choix = scanner.nextInt();
                 if (choix >= 1 && choix <= super.NB_NODES) {
                     System.out.println("Vous avez saisi : " + choix);
@@ -44,7 +45,7 @@ public class DecisionNode extends InnerNode {
 
             } else {
                 System.out.println("Veuillez saisir un entier valide.");
-                scanner.next();
+                scanner.nextLine();
             }
         }
 

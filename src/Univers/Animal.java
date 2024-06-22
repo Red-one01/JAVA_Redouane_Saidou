@@ -60,7 +60,7 @@ public abstract class Animal {
                             +opposant +"? (oui/non)");
 
                     reponse = scanner.nextLine().trim().toLowerCase();
-                    scanner.close();
+
 
                     if (reponse.equals("oui")) {
                         System.out.println("Super, vous avez un nouveau compagnon !");
