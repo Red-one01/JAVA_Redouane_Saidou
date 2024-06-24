@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class Lion extends Animal {
 
-    public Lion(String Nom, int pv_max) {
-        super(Nom, pv_max);
+    public Lion(String Nom, int pv_max,int dammage) {
+        super(Nom, pv_max,dammage);
         super.type = Element_naturel.TERRE;
     }
     public static Lion creerLionAleatoire() {
@@ -18,7 +18,7 @@ public class Lion extends Animal {
         // Génération aléatoire de pv_max entre 70 et 120 pour un lion
         int pv_max = random.nextInt(51) + 70;
 
-        return new Lion(nom, pv_max);
+        return new Lion(nom, pv_max,random.nextInt(51) + 25);
     }
 
 

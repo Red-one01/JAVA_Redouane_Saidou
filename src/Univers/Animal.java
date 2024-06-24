@@ -20,9 +20,11 @@ public abstract class Animal {
         pv = pv_max;
     }
 
-    public Animal(String Nom, int pv_max){
+    public Animal(String Nom, int pv_max, int damage){
         this.Nom = Nom;
         this.pv_max = pv_max;
+        this.damage= damage;
+        this.pv= this.pv_max;
     }
 
     public static Animal creerAnimalAleatoire() {//factory aléatoire
@@ -50,12 +52,15 @@ public abstract class Animal {
     }
 
     public Animal combattre(Animal opposant){
+        if (opposant.pv <= 0 )
+            System.out.println("grosse galere");
 
         while(true){
             if (!opposant.attaquer(this.type,this.damage )){
                 while (true) {
                     Scanner scanner = new Scanner(System.in);
                     String reponse;
+                    opposant.revive();
                     System.out.println("Vous avez gagner voulez-vous echanger votre compagnon actuel avec "
                             +opposant +"? (oui/non)");
 
@@ -64,11 +69,11 @@ public abstract class Animal {
 
                     if (reponse.equals("oui")) {
                         System.out.println("Super, vous avez un nouveau compagnon !");
-                        opposant.revive();
+                        //opposant.revive();
                         return opposant;
                     } else if (reponse.equals("non")) {
                         System.out.println("D'accord, vous conservez votre compagnon actuel !");
-                        this.revive();
+                        //this.revive();
                         return this;
                     } else {
                         System.out.println("Veuillez répondre par 'oui' ou 'non'.");
@@ -79,6 +84,7 @@ public abstract class Animal {
             if (!this.attaquer(opposant.type,opposant.damage )){
                 System.out.println("Vous avez perdu le combat");
                 this.revive();
+                opposant.revive();
                 return this;
             }
         }

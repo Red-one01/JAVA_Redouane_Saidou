@@ -32,7 +32,7 @@ public class DecisionNode extends InnerNode {
 
         while (true) {
             System.out.print("Veuillez saisir un entier entre 1 et " + NB_NODES + " : ");
-            if (scanner.hasNextLine()) {
+            if (scanner.hasNextInt()) {
                 choix = scanner.nextInt();
                 if (choix >= 1 && choix <= super.NB_NODES) {
                     System.out.println("Vous avez saisi : " + choix);

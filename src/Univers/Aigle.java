@@ -3,8 +3,8 @@ package Univers;
 import java.util.Random;
 
 public class Aigle extends Animal {
-    public Aigle(String Nom, int pv_max) {
-        super(Nom, pv_max);
+    public Aigle(String Nom, int pv_max,int dammage) {
+        super(Nom, pv_max,dammage);
         super.type = Element_naturel.AIR;
     }
 
@@ -18,7 +18,7 @@ public class Aigle extends Animal {
         // Génération aléatoire de pv_max entre 40 et 90 pour un aigle
         int pv_max = random.nextInt(51) + 40;
 
-        return new Aigle(nom, pv_max);
+        return new Aigle(nom, pv_max,random.nextInt(51) + 15);
     }
 
 

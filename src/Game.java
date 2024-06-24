@@ -1,5 +1,6 @@
 import Representation.*;
 import Univers.Combat;
+import Univers.Lion;
 import Univers.Personnage;
 
 import java.util.ArrayList;
@@ -27,10 +28,16 @@ public class Game {
         list_nodes.add(new ChanceNode("nullité de saihou aux echecs",new Combat()));
         list_nodes.add(new DecisionNode("aneantissement de saijou aux echecs",new Combat()));
 
-
-
     }
 
+    public void remove_node(int id){
+        for (int i = 0; i < list_nodes.size(); i++) {
+            if (list_nodes.get(i).getId()== id){
+                list_nodes.remove(i);
+                return;
+            }
+        }
+    }
 
     public void Lancement(){
         ArrayList<Node> remplisseur = new ArrayList<>();
@@ -42,11 +49,9 @@ public class Game {
 
             for (int i = 0; i < InnerNode.NB_NODES; i++) {
 
-                if (list_nodes.size() < InnerNode.NB_NODES){
-                    for (int z = 0; z < InnerNode.NB_NODES; z++) {//à surveiller la condition
-                        remplisseur.add(new TerminalNode("la partie s'arrete ici bravo",new Combat()));
-                    }
-                    break;
+                if (i <  InnerNode.NB_NODES - list_nodes.size()){
+
+                    remplisseur.add(new TerminalNode("la partie s'arrete ici bravo",new Combat()));
                 }
                 else {remplisseur.add(list_nodes.get(random.nextInt(list_nodes.size())));}
 
@@ -56,6 +61,7 @@ public class Game {
             node_courant.display();
             node_courant.lancer_action(test);
             node_courant = node_courant.choseNext();
+            this.remove_node(node_courant.getId());
             remplisseur.clear();
         }
 

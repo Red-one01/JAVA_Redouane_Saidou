@@ -6,8 +6,8 @@ import java.util.Random;
 public class Dragon extends Animal {
 
 
-    public Dragon(String Nom, int pv_max) {
-        super(Nom, pv_max);
+    public Dragon(String Nom, int pv_max,int dammage) {
+        super(Nom, pv_max,dammage);
         super.type = Element_naturel.FEU;
     }
 
@@ -21,7 +21,7 @@ public class Dragon extends Animal {
         // Génération aléatoire de pv_max entre 50 et 100
         int pv_max = random.nextInt(51) + 100;//nombre magique a retirer
 
-        return new Dragon(nom, pv_max);
+        return new Dragon(nom, pv_max,random.nextInt(51) + 20);
     }
 
     @Override
