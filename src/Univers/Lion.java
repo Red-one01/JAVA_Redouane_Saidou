@@ -1,5 +1,7 @@
 package Univers;
 
+import ihm.IHM_console;
+
 import java.util.Random;
 
 public class Lion extends Animal {
@@ -24,6 +26,7 @@ public class Lion extends Animal {
 
     @Override
     public boolean attaquer(Element_naturel type_attaque, int degats) {
+        IHM_console.jouer_son("tigre.wav");
         if (type_attaque.equals(Element_naturel.FEU)) {
             pv = pv - degats * BONUS_DEGAT_TYPE;
         } else if (type_attaque.equals(Element_naturel.AIR)) {

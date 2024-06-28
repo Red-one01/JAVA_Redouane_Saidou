@@ -1,8 +1,14 @@
+package ihm;
+
 import Univers.Animal;
 import Univers.Genre;
+
+import javax.sound.sampled.*;
+import java.io.File;
+
 import java.util.Scanner;
 
-public class IHM_console implements IHM{
+public class IHM_console implements IHM {
 
     @Override
     public  int taille_creation() {
@@ -61,5 +67,18 @@ public class IHM_console implements IHM{
     @Override
     public Animal premier_compagnon() {
         return Animal.creerAnimalAleatoire();
+    }
+
+
+    public static void jouer_son(String received) {
+        String soundFileName = received;
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("./" + soundFileName).getAbsoluteFile());
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception e) {
+            System.out.println("Error while playing sound.");
+        }
     }
 }

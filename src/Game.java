@@ -1,7 +1,8 @@
 import Representation.*;
 import Univers.Combat;
-import Univers.Lion;
 import Univers.Personnage;
+import ihm.IHM;
+import ihm.IHM_console;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -9,7 +10,7 @@ import java.util.Random;
 public class Game {
     private Personnage joueur;
 
-    private Node node_courant = new DecisionNode("Betise aux eechecs de saikou",new Combat());
+    private Node node_courant = new DecisionNode("Que le jeu commence et puissiez vous devenir les roi des combats de monstres",new Combat());
 
     private IHM ihm = new IHM_console();
     // Déclaration et initialisation d'un tableau d'entiers avec des valeurs initiales
@@ -20,13 +21,13 @@ public class Game {
     public Game(){
 
 
-        list_nodes.add(new DecisionNode("combat avec combrend pas ",new Combat()));
-        list_nodes.add(new ChanceNode("combat avec combrend tas", new Combat()));
-        list_nodes.add(new DecisionNode("combat d'echec avec mamalou",new Combat()));
-        list_nodes.add(new ChanceNode("tabassage aux echecs de saisou",new Combat()));
-        list_nodes.add(new DecisionNode("la mort de saifou aux echecs",new Combat()));
-        list_nodes.add(new ChanceNode("nullité de saihou aux echecs",new Combat()));
-        list_nodes.add(new DecisionNode("aneantissement de saijou aux echecs",new Combat()));
+        list_nodes.add(new DecisionNode("Vous voila plonger dans le bain avec ce combat endiablé ",new Combat()));
+        list_nodes.add(new ChanceNode("réussirez vous ce comabt ?", new Combat()));
+        list_nodes.add(new DecisionNode("voila un combat mythique qui sera inoubliable",new Combat()));
+        list_nodes.add(new ChanceNode("ca ne s'est joué à pas grand chose",new Combat()));
+        list_nodes.add(new DecisionNode("combat determinant pour votre futur carrière de combatant",new Combat()));
+        list_nodes.add(new ChanceNode("combat qui necessité beaucoup d'ingéniosité",new Combat()));
+        list_nodes.add(new DecisionNode("combat exceptionnel",new Combat()));
 
     }
 

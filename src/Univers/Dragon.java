@@ -1,6 +1,8 @@
 package Univers;
 
 
+import ihm.IHM_console;
+
 import java.util.Random;
 
 public class Dragon extends Animal {
@@ -26,6 +28,7 @@ public class Dragon extends Animal {
 
     @Override
     public boolean attaquer(Element_naturel type_attaque, int degats) {
+        IHM_console.jouer_son("dragon.wav");
         if (type_attaque.equals(Element_naturel.EAU)) {
             pv = pv - degats * BONUS_DEGAT_TYPE;
         } else if (type_attaque.equals(Element_naturel.TERRE)) {
@@ -33,6 +36,7 @@ public class Dragon extends Animal {
         } else {
             pv = pv - degats;
         }
+
 
 
         if (pv <= 0) {
